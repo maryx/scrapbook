@@ -5,6 +5,8 @@ app_name = 'images' # this is for namespacing
 urlpatterns = [
     # /images
     url(r'^$', views.index, name='index'),
+    # /images/create
+    url(r'^create$', views.create, name='create'), # create POST happens here
     # /images/5
     url(r'^(?P<image_id>[0-9]+)/$', views.detail, name='detail'),
     # /images/5/edit

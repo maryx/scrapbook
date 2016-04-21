@@ -6,10 +6,10 @@
   {% csrf_token %}
  
   <label for="img_source">Image Source</label><br />
-  <input type="text" name="img_source" id="img_source" value="{{ image.img_source }}" />
- 
+  <input type="text" name="img_source" id="img_source" value="{{ image.img_source }}" size="100"/>
+  <br> 
   <label for="tags">Tags</label><br />
-  <input type="text" name="tags" id="tags" value="{{ image.tags }}" />
-  
+  <textarea name="tags" id="tags" value="{{ image.tags }}" rows="6" cols="100" wrap="hard">{{ image.tags }}</textarea>
+  <br>
   <input type="submit" value="Save" />
 </form>

@@ -1,3 +1,19 @@
+
+<h1> Add Image </h1>
+<form action="{% url 'images:create' %}" method="post">
+  {% csrf_token %}
+
+  <label for="img_source">Image Source</label><br />
+  <input type="text" name="img_source" id="img_source" value="{{ image.img_source }}" />
+  <br>
+  <label for="tags">Optional Extra Tags (The Autotagger will take care of the rest!)</label><br />
+  <textarea name="tags" id="tags" value="{{ image.tags }}" rows="2" cols="100"></textarea>
+  <br>
+  <input type="submit" value="Create" />
+</form>
+
+
+<h1> Recent Images </h1> 
 {% if recent_image_list %}
 <ul>
   {% for image in recent_image_list %}
