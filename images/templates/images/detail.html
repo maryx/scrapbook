@@ -1,0 +1,15 @@
+<img src="{{ image.img_source }}">
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'images:edit' image.id %}" method="post">
+  {% csrf_token %}
+ 
+  <label for="img_source">Image Source</label><br />
+  <input type="text" name="img_source" id="img_source" value="{{ image.img_source }}" />
+ 
+  <label for="tags">Tags</label><br />
+  <input type="text" name="tags" id="tags" value="{{ image.tags }}" />
+  
+  <input type="submit" value="Save" />
+</form>

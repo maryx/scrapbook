@@ -1,0 +1,10 @@
+{% if recent_image_list %}
+<ul>
+  {% for image in recent_image_list %}
+  <!-- This is ugly and confusing: <a href="/images/{{ image.id }}/"> -->
+  <li><a href="{% url 'images:detail' image.id %}"><img src="{{ image.img_source }}"></a></li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No images are available.</p>
+{% endif %}
