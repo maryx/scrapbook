@@ -1,6 +1,9 @@
-<img src="{{ image.img_source }}">
-
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<h2> Chance this image is NSFW: {{ image.nsfw_probability }}% </h2>
+
+<img src="{{ image.img_source }}">
+			       
 
 <form action="{% url 'images:edit' image.id %}" method="post">
   {% csrf_token %}
